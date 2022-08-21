@@ -1,21 +1,19 @@
 import React from 'react';
 
-const UserPost = () => {
+const TokenPost = () => {
   const [username, setUsername] = React.useState('');
-  const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    fetch('https://dogsapi.origamid.dev/json/api/user', {
+    fetch('https://dogsapi.origamid.dev/json/jwt-auth/v1/token', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         username,
-        email,
         password,
       }),
     })
@@ -43,15 +41,9 @@ const UserPost = () => {
         value={password}
         onChange={({ target }) => setPassword(target.value)}
       />
-      <input
-        type="email"
-        placeholder="email"
-        value={email}
-        onChange={({ target }) => setEmail(target.value)}
-      />
       <button>Enviar</button>
     </form>
   );
 };
 
-export default UserPost;
+export default TokenPost;
