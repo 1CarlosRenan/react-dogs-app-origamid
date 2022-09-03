@@ -1,4 +1,4 @@
-.nav{
+.nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
@@ -7,7 +7,7 @@
 .nav a,
 .nav button {
   background: #eee;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   height: 40px;
   width: 40px;
   display: flex;
@@ -19,8 +19,8 @@
 }
 
 .nav a:hover,
-.nav button:hover,
 .nav a:focus,
+.nav button:hover,
 .nav button:focus {
   background: white;
   box-shadow: 0 0 0 3px #eee;
@@ -28,22 +28,22 @@
   outline: none;
 }
 
-.nav a:global(.active) {
+.nav :global(a.active) {
   background: white;
   box-shadow: 0 0 0 3px #fea;
   border-color: #fb1;
 }
 
-.nav a:global(.active) svg > * {
-  fill: #fb1
+.nav :global(a.active) svg > * {
+  fill: #fb1;
 }
 
 .mobileButton {
   background: #eee;
-  border-radius: .2rem;
-  padding: 0px;
+  border-radius: 0.2rem;
   height: 40px;
   width: 40px;
+  padding: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,13 +52,13 @@
   cursor: pointer;
 }
 
-.mobileButton::after{
+.mobileButton::after {
   content: '';
   display: block;
   width: 1.2rem;
   height: 2px;
+  border-radius: 2px;
   background: currentColor;
-  border-radius: 2rem;
   box-shadow: 0 6px currentColor, 0 -6px currentColor;
   transition: 0.2s;
 }
@@ -67,12 +67,13 @@
 .mobileButton:hover,
 .mobileButtonActive {
   outline: none;
+  background: white;
   box-shadow: 0 0 0 3px #fea;
-  border-radius: #fb1;
+  border-color: #fb1;
   color: #fb1;
 }
 
-.mobileButtonActive::after{
+.mobileButtonActive::after {
   transform: rotate(90deg);
   width: 4px;
   height: 4px;
@@ -94,7 +95,7 @@
 }
 
 .navMobileActive {
-  transition: .3s;
+  transition: 0.3s;
   transform: initial;
   opacity: 1;
   pointer-events: initial;
@@ -114,14 +115,14 @@
 }
 
 .navMobile a:hover svg > *,
-.navMobile button:hover > svg * {
-  fill: #fb1
+.navMobile button:hover svg > * {
+  fill: #fb1;
 }
 
 .navMobile button {
   border-bottom: none;
 }
 
-.navMobile svg{
+.navMobile svg {
   margin-right: 0.5rem;
 }

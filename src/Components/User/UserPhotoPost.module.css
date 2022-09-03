@@ -15,7 +15,7 @@
   background-position: center center;
 }
 
-.preview::after{
+.preview::after {
   content: '';
   display: block;
   height: 0px;

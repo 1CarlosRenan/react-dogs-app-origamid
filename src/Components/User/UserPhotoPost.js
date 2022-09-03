@@ -24,9 +24,9 @@ const UserPhotoPost = () => {
     event.preventDefault();
     const formData = new FormData();
     formData.append('img', img.raw);
-    formData.append('nome', nome.raw);
-    formData.append('peso', peso.raw);
-    formData.append('idade', idade.raw);
+    formData.append('nome', nome.value);
+    formData.append('peso', peso.value);
+    formData.append('idade', idade.value);
 
     const token = window.localStorage.getItem('token');
     const { url, options } = PHOTO_POST(formData, token);
@@ -44,8 +44,8 @@ const UserPhotoPost = () => {
     <section className={`${styles.photoPost} animeLeft`}>
       <form onSubmit={handleSubmit}>
         <Input label="Nome" type="text" name="nome" {...nome} />
-        <Input label="Peso" type="text" name="peso" {...peso} />
-        <Input label="Idade" type="text" name="idade" {...idade} />
+        <Input label="Peso" type="number" name="peso" {...peso} />
+        <Input label="Idade" type="number" name="idade" {...idade} />
         <input
           className={styles.file}
           type="file"
@@ -54,7 +54,7 @@ const UserPhotoPost = () => {
           onChange={handleImgChange}
         />
         {loading ? (
-          <Button disabled>Carregando...</Button>
+          <Button disabled>Enviando...</Button>
         ) : (
           <Button>Enviar</Button>
         )}
