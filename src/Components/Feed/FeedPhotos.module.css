@@ -1,4 +1,4 @@
-.feed{
+.feed {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
@@ -7,7 +7,7 @@
 }
 
 @media (max-width: 40rem) {
-  .feed{
+  .feed {
     grid-template-columns: repeat(2, 1fr);
   }
 }

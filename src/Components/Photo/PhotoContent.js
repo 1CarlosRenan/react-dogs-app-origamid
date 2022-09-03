@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from './PhotoContent.module.css';
+import { Link } from 'react-router-dom';
 import PhotoComments from './PhotoComments';
 import { UserContext } from '../../UserContext';
 import PhotoDelete from './PhotoDelete';
