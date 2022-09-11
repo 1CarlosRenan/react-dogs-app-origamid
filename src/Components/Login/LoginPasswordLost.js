@@ -11,14 +11,15 @@ const LoginPasswordLost = () => {
   const login = useForm();
   const { data, loading, error, request } = useFetch();
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     if (login.validate()) {
       const { url, options } = PASSWORD_LOST({
         login: login.value,
         url: window.location.href.replace('perdeu', 'resetar'),
       });
-      request(url, options);
+      const { json } = await request(url, options);
+      console.log(json);
     }
   }
 
@@ -30,7 +31,7 @@ const LoginPasswordLost = () => {
         <p style={{ color: '#4c1' }}>{data}</p>
       ) : (
         <form onSubmit={handleSubmit}>
-          <Input label="Email / Usuário" type="text" name="email" {...login} />
+          <Input label="Email / Usuário" type="text" name="login" {...login} />
           {loading ? (
             <Button disabled>Enviando...</Button>
           ) : (
@@ -38,6 +39,7 @@ const LoginPasswordLost = () => {
           )}
         </form>
       )}
+
       <Error error={error} />
     </section>
   );

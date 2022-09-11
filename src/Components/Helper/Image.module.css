@@ -7,7 +7,7 @@
   max-width: 100%;
   grid-area: 1/1;
   opacity: 0;
-  transition: 0.2;
+  transition: 0.2s;
 }
 
 .skeleton {
@@ -20,7 +20,7 @@
 }
 
 @keyframes skeleton {
-  form {
+  from {
     background-position: 0px;
   }
   to {
