@@ -21,7 +21,7 @@ const UserPhotoPost = () => {
     if (data) navigate('/conta');
   }, [data, navigate]);
 
-  function handleSubmit(event) {
+  function handleSubmit(event: Event) {
     event.preventDefault();
     const formData = new FormData();
     formData.append('img', img.raw);
